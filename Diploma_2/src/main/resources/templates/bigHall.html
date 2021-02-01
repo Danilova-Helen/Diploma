@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Big Hall</title>
+
+    <link rel="stylesheet" th:href="@{bigHall.css}">
+    <script th:src="@{modal.js}"></script>
+
+</head>
+<body>
+
+    <button type="button" class="button_b" value="5" onclick="modal(value, id)" id="t1" th:style="position=${}"></button>
+    <button type="button" class="button_s" value="4" onclick="modal(value, id)" id="t2"></button>
+    <button type="button" class="button_s" value="4" onclick="modal(value, id)" id="t3"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t4"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t5"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t6"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t7"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t8"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t9"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t10"></button>
+    <button type="button" class="button_s" value="2" onclick="modal(value, id)" id="t11"></button>
+    <button type="button" class="button_s" value="2" onclick="modal(value, id)" id="t12"></button>
+    <button type="button" class="button_s" value="2" onclick="modal(value, id)" id="t13"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t14"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t15"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t16"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t17"></button>
+    <button type="button" class="button_b" value="4" onclick="modal(value, id)" id="t18"></button>
+    <button type="button" class="button_c" value="1" onclick="modal(value, id)" id="c1"></button>
+    <button type="button" class="button_c" value="1" onclick="modal(value, id)" id="c2"></button>
+    <button type="button" class="button_c" value="1" onclick="modal(value, id)" id="c3"></button>
+    <button type="button" class="button_c" value="1" onclick="modal(value, id)" id="c4"></button>
+    <button type="button" class="button_c" value="1" onclick="modal(value, id)" id="c5"></button>
+
+    <a th:href="@{start}"><img th:src="@{images/back.png}" class="back" width="30"/></a>
+    <img th:src="@{images/bh.png}" class="img" width="1500"/>
+
+    <div id="dark">
+        <div id="win">
+            <img th:src="@{images/close.png}" class="close" width="30" onclick="document.location.href ='#'"/>
+            <div id="table">
+            </div>
+            <div id="place">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
