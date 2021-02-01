@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Small Hall</title>
+
+    <link rel="stylesheet" th:href="@{smallHall.css}">
+    <script th:src="@{modal.js}"></script>
+
+</head>
+<body>
+
+    <button type="button" class="button_b_p" th:onclick="'modal('+${desks[0].quantity}+', '+${desks[0].number}+')'" th:style="'position:'+${desks[0].position}+'; left:'+${desks[0].leftCord}+'%; top:'+${desks[0].topCord}+'%;'"></button>
+    <button type="button" class="button_b_p" th:onclick="'modal('+${desks[1].quantity}+', '+${desks[1].number}+')'" th:style="'position:'+${desks[1].position}+'; left:'+${desks[1].leftCord}+'%; top:'+${desks[1].topCord}+'%;'"></button>
+    <button type="button" class="button_s_p" th:onclick="'modal('+${desks[2].quantity}+', '+${desks[2].number}+')'" th:style="'position:'+${desks[2].position}+'; left:'+${desks[2].leftCord}+'%; top:'+${desks[2].topCord}+'%;'"></button>
+    <button type="button" class="button_b" th:onclick="'modal('+${desks[3].quantity}+', '+${desks[3].number}+')'" th:style="'position:'+${desks[3].position}+'; left:'+${desks[3].leftCord}+'%; top:'+${desks[3].topCord}+'%;'"></button>
+    <button type="button" class="button_b" th:onclick="'modal('+${desks[4].quantity}+', '+${desks[4].number}+')'" th:style="'position:'+${desks[4].position}+'; left:'+${desks[4].leftCord}+'%; top:'+${desks[4].topCord}+'%;'"></button>
+    <button type="button" class="button_b" th:onclick="'modal('+${desks[5].quantity}+', '+${desks[5].number}+')'" th:style="'position:'+${desks[5].position}+'; left:'+${desks[5].leftCord}+'%; top:'+${desks[5].topCord}+'%;'"></button>
+    <button type="button" class="button_b" th:onclick="'modal('+${desks[6].quantity}+', '+${desks[6].number}+')'" th:style="'position:'+${desks[6].position}+'; left:'+${desks[6].leftCord}+'%; top:'+${desks[6].topCord}+'%;'"></button>
+    <button type="button" class="button_b" th:onclick="'modal('+${desks[7].quantity}+', '+${desks[7].number}+')'" th:style="'position:'+${desks[7].position}+'; left:'+${desks[7].leftCord}+'%; top:'+${desks[7].topCord}+'%;'"></button>
+    <button type="button" class="button_b" th:onclick="'modal('+${desks[8].quantity}+', '+${desks[8].number}+')'" th:style="'position:'+${desks[8].position}+'; left:'+${desks[8].leftCord}+'%; top:'+${desks[8].topCord}+'%;'"></button>
+    <button type="button" class="button_b" th:onclick="'modal('+${desks[9].quantity}+', '+${desks[9].number}+')'" th:style="'position:'+${desks[9].position}+'; left:'+${desks[9].leftCord}+'%; top:'+${desks[9].topCord}+'%;'"></button>
+    <button type="button" class="button_s" th:onclick="'modal('+${desks[10].quantity}+', '+${desks[10].number}+')'" th:style="'position:'+${desks[10].position}+'; left:'+${desks[10].leftCord}+'%; top:'+${desks[10].topCord}+'%;'"></button>
+    <button type="button" class="button_s" th:onclick="'modal('+${desks[11].quantity}+', '+${desks[11].number}+')'" th:style="'position:'+${desks[11].position}+'; left:'+${desks[11].leftCord}+'%; top:'+${desks[11].topCord}+'%;'"></button>
+
+    <a th:href="@{start}"><img th:src="@{images/back.png}" class="back" width="30" onclick="document.location.href ='start.html'"/></a>
+    <img th:src="@{images/sh.png}" class="img" width="850"/>
+
+    <div id="dark">
+        <div id="win">
+            <img th:src="@{images/close.png}" class="close" width="30" onclick="document.location.href ='#'"/>
+            <div id="table">
+            </div>
+            <div id="place">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
