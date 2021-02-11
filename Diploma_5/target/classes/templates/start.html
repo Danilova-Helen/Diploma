@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+
+    <link rel="stylesheet" th:href="@{start.css}">
+
+</head>
+<body>
+
+    <div>
+        <a th:each="hall: ${halls}" th:href="@{/halls/{id}(id=${hall.id})}"><img th:src="@{${hall.img}}" th:class="${hall.grade}"/></a>
+    </div>
+
+</body>
+</html>
