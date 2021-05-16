@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation</title>
+
+    <link rel="stylesheet" th:href="@{../reservation.css}">
+    <link rel="shortcut icon" th:href="@{../images/favicon.png}" type="image/png">
+
+</head>
+<body>
+
+    <a th:href="@{../map}"><img th:src="@{../images/back.png}" class="back" onclick="document.location.href ='map.html'"/></a>
+
+    <table cols="8" id="table">
+        <tr>
+            <th>Номер стола</th>
+            <th>ФИО</th>
+            <th>Номер телефона</th>
+            <th>Количество гостей</th>
+            <th>Начало брони</th>
+            <th>Конец брони</th>
+            <th>Комментарий</th>
+            <th>Удалить</th>
+        </tr>
+        <tr th:each="book: ${books}"><td th:text="${book.desk.number}"></td><td th:text="${book.fio}"></td><td th:text="${book.tel}"></td><td th:text="${book.quantity}"></td>
+            <td th:text="${book.beginTime.time}"></td><td th:text="${book.endTime.time}"></td><td th:text="${book.com}"></td><th><button th:value="${book.id}" type="submit" class="delete">Удалить</button></th></tr>
+    </table>
+
+</body>
+</html>
