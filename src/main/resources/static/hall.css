@@ -1,0 +1,252 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.back {
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 2%;
+    /*z-index: 1000;*/
+}
+
+.user {
+    position: absolute;
+    margin-top: 2%;
+    right: 2%;
+    width: 4%;
+    /*z-index: 1000;*/
+}
+
+.time {
+    display: flex;
+    position: absolute;
+    width: 12.5%;
+    height: 6%;
+    margin: auto;
+    top: 2%;
+    left: 50%;
+    margin-left: -7.5%;
+}
+.sel {
+    display: flex;
+    max-width: 49%;
+    height: 100%;
+    border: 2px solid #fff;
+    font-size: 150%;
+    color: #000;
+    text-align-last: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 70%;
+}
+.pic .but{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    width: inherit;
+}
+
+button {
+    box-shadow: 0 0 15px 1px #fff, inset 0 0 5px 1px #fff;
+}
+
+.button_b {
+    width: 180px;
+    height: 110px;
+    background: none;
+    border-color: transparent;
+}
+.button_b_p {
+    width: 110px;
+    height: 180px;
+    background: none;
+    border-color: transparent;
+}
+
+.button_s {
+    width: 180px;
+    height: 57.5px;
+    background: none;
+    border-color: transparent;
+}
+.button_s_p {
+    width: 57.5px;
+    height: 180px;
+    background: none;
+    border-color: transparent;
+}
+
+.button_c {
+    width: 52px;
+    height: 44px;
+    background: none;
+    border-color: transparent;
+}
+
+#dark1, #dark2, #dark3 {
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+#info {
+    width: 40%;
+    height: 73%;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #000;
+}
+#booking {
+    width: 40%;
+    height: 74%;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #000;
+}
+#timeFS {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: auto
+}
+#timeF, #timeS {
+    display:inline-block;
+}
+#text {
+    width: 40%;
+    height: 14%;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #000;
+}
+#dark1:target, #dark2:target, #dark3:target {
+    display: block;
+}
+.close {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    width: 5%;
+}
+#text.close {
+    position: absolute;
+    right: 2%;
+    top: 4%;
+    width: 5%;
+}
+.booking {
+    margin-top: 2%;
+    border: 2px solid #fff;
+    font-size: 150%;
+    color: #000;
+    text-align-last: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+
+
+.picTable {
+    width: 50%;
+}
+
+.fio {
+    width: 40%;
+    border: 2px solid #fff;
+    font-size: 100%;
+    color: #000;
+    text-align-last: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+.tel {
+    width: 20%;
+    border: 2px solid #fff;
+    font-size: 100%;
+    color: #000;
+    text-align-last: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+.quantity {
+    width: 5%;
+    border: 2px solid #fff;
+    font-size: 100%;
+    color: #000;
+    text-align-last: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+.com {
+    border: 2px solid #fff;
+    font-size: 100%;
+    color: #000;
+    text-align-last: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+    width: 50%;
+}
+.check {
+    margin-top: 2%;
+}
+.selTime {
+    width: 10%;
+    border: 2px solid #fff;
+    font-size: 100%;
+    color: #000;
+    text-align-last: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}

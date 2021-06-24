@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Брони</title>
+
+    <link rel="stylesheet" th:href="@{../reservation.css}">
+    <script type="text/javascript" th:src="@{../jquery.js}"></script>
+    <script type="text/javascript" th:src="@{../reservation.js}"></script>
+    <link rel="shortcut icon" th:href="@{../images/favicon.png}" type="image/png">
+
+</head>
+<body>
+
+    <a th:href="@{../map}"><img th:src="@{../images/back.png}" class="back" onclick="document.location.href ='map.html'"/></a>
+
+    <form method="POST" th:action="@{/logout}">
+        <button class="exit" type="submit">Выход</button>
+    </form>
+
+    <table cols="8" id="table">
+        <thead>
+            <tr>
+                <th>Номер стола</th>
+                <th>ФИО</th>
+                <th>Номер телефона</th>
+                <th>Количество гостей</th>
+                <th>Начало брони</th>
+                <th>Конец брони</th>
+                <th>Комментарий</th>
+                <th>Удалить</th>
+            </tr>
+        </thead>
+        <tbody id="table_book">
+            <tr th:each="book: ${books}" th:value="${book.id}"><td th:text="${book.desk.number}"></td><td th:text="${book.fio}"></td><td th:text="${book.tel}"></td><td th:text="${book.quantity}"></td>
+                <td th:text="${book.beginTime.time}"></td><td th:text="${book.endTime.time}"></td><td th:text="${book.com}"></td><th><button th:value="${book.id}" class="delete" onclick="del(value)">Удалить</button></th>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

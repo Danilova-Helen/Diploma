@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${halls.name}"></title>
+
+    <link rel="stylesheet" th:href="@{../hall.css}">
+    <script type="text/javascript" th:src="@{../jquery.js}"></script>
+    <script th:src="@{../hall.js}"></script>
+    <link rel="shortcut icon" th:href="@{../images/favicon.png}" type="image/png">
+
+</head>
+<body>
+
+    <a th:href="@{../map}"><img th:src="@{../images/back.png}" class="back" onclick="document.location.href ='map.html'"/></a>
+    <a th:href="@{../login}"><img th:src="@{../images/user.png}" class="user" onclick="document.location.href ='login.html'"/></a>
+
+    <form class="time" name="time">
+        <select class="sel" id="old" name="old" value="#" onchange="document.time.new.disabled = !this.selectedIndex; selectChanged1();">
+            <option value="0" disabled selected>Выберите время</option>
+            <option th:each="time: ${times}" th:value="${time.id}" th:text="${time.time}"></option>
+        </select>
+        <select class="sel" id="new" name="new" value="#" onchange="selectChanged1()" disabled>
+            <option value="0" disabled selected>Выберите время</option>
+            <option th:each="time: ${times}" th:value="${time.id}" th:text="${time.time}"></option>
+        </select>
+    </form>
+
+    <div class="map">
+        <div class="pic" th:style="'background-image: url('+@{'../'+${halls.img}}+');'">
+            <div class="but">
+                <button type="button" th:each="desk: ${desks}" th:id="${desk.id}" th:class="${desk.grade}" th:onclick="'modal1('+${desk.id}+','+${desk.quantity}+', '+${desk.number}+')'"
+                    th:style="'position:'+${desk.position}+'; left:'+${desk.leftCord}+'%; top:'+${desk.topCord}+'%;'" disabled></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dark1">
+        <div id="info">
+            <img th:src="@{../images/close.png}" id="close" class="close" onclick="closeD1()"/>
+            <div id="table"></div>
+            <div id="place" value="0"></div>
+            <div id="picture"></div>
+            <div>
+                <button id="but2" value="0" type="button" class="booking" onclick="modal2(value)">Забронировать</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dark2">
+        <form action="#" th:action="@{/booking}" th:object="${booking}" method="POST">
+            <div id="booking">
+                <img th:src="@{../images/close.png}" class="close" onclick="closeD1()"/>
+                <div>
+                    <h1>Лист бронирования</h1>
+                </div>
+                    <input id="deskNum" value="0" th:field="*{desk}" hidden>
+                <div id="fio">
+                    <h2>ФИО:</h2>
+                    <input class="fio" type="text" name="name" placeholder="Иванов Иван Иванович" th:field="*{fio}" required="required">
+                </div>
+                <div id="tel">
+                    <h2>Телефон:</h2>
+                    <input class="tel" type="tel" name="tel" pattern="8[0-9]{10}" placeholder="8 800 555 35 35" th:field="*{tel}" required="required">
+                </div>
+                <div id="quantity">
+                    <h2>Количество гостей:</h2>
+                    <input class="quantity" id="qua" type="number" name="quantity" min="1" placeholder="1" th:field="*{quantity}" required="required">
+                </div>
+                <div id="time">
+                    <h2>Время бронирования:</h2>
+                    <div id="timeFS">
+                        <div id="timeF">
+                            <input id="timeFin" value="0" th:field="*{beginTime}" hidden>
+                        </div>
+                        <div>
+                            <h3>-</h3>
+                        </div>
+                        <div id="timeS">
+                            <input id="timeSin" value="0" th:field="*{endTime}" hidden>
+                        </div>
+                    </div>
+                </div>
+                <div id="com">
+                    <h2>Комментарий:</h2>
+                    <textarea class="com" rows="5" name="text" placeholder="Можете оставить комментарий" th:field="*{com}"></textarea>
+                </div>
+                <div>
+                    <input class="check" type="checkbox" name="check" value="1" checked required="required">Я согласен с условиями политики конфиденциальности
+                </div>
+                <div>
+                    <button type="submit" class="booking" onclick="modal3()">Забронировать</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="dark3">
+        <div id="text">
+            <img th:src="@{../images/close.png}" class="close" onclick="closeD1()"/>
+            <div>
+                <h1>Ваша заявка на бронирование одобрена!</h1>
+            </div>
+            <div>
+                <h2>Хорошего дня!</h2>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
